@@ -39,7 +39,6 @@ class Unit:
             and self.pos_y <= y_2
         )
 
-
 class Dragon(Unit):
     def __init__(self, name, pos_x, pos_y, fire_range):
         super().__init__(name, pos_x, pos_y)
