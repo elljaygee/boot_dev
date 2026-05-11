@@ -4,6 +4,7 @@ import argparse
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+from functions.prompts import system_prompt
 
 load_dotenv()
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -23,7 +24,8 @@ def main():
         try:
             response = client.models.generate_content(
                 model='gemini-2.5-flash',
-                contents=messages
+                contents=messages,
+                config=types.GenerateContentConfig(system_instruction=system_prompt),
             )
 
             if not response.usage_metadata:
