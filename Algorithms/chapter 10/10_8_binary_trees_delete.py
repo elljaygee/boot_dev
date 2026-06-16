@@ -1,6 +1,3 @@
-
-
-
 ''' EXPLANATION:
 “What node should replace the root of this subtree after deletion?”
 The flow:
